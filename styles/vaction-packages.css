@@ -1,0 +1,31 @@
+#packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.package {
+  background: #fff;
+  border-radius: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: solid;
+  border-color: #cdcdcd;
+  box-shadow: 0 0 10px rgba(251, 115, 115, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.pkgImg {
+  height: 120px;
+  border-radius: 8px;
+  border: solid;
+  border-color: #cdcdcd;
+  height: 120px;
+  width: 100%;
+}
+
+.vacayText {
+  font-size: 12px;
+}
