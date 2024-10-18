@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  getTripTypes();
+
   function validateForm() {
     let isValid = true;
 
@@ -85,5 +87,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // Example regex for Canadian postal codes (A1A 1A1)
     const re = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
     return re.test(postalCode);
+  }
+  async function getTripTypes() {
+    try {
+      const res = await fetch("http://localhost:3000/triptypes");
+      const data = await res.json();
+
+      const tripTypeSelector = document.getElementById("trip-type");
+      tripTypeSelector.innerHTML = ""; // reset after fetch
+
+      data.forEach((triptype) => {
+        const optionHTML = `<option value="${triptype.TripTypeId}">${triptype.TTName}</option>`;
+        tripTypeSelector.innerHTML += optionHTML;
+      });
+    } catch (error) {
+      console.error("Can't not fetch the triptypes: ", error);
+    }
   }
 });
