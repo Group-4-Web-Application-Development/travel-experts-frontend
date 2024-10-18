@@ -89,11 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(postalCode);
   }
   async function getTripTypes() {
+    const tripTypeSelector = document.getElementById("trip-type");
+
     try {
       const res = await fetch("http://localhost:3000/triptypes");
       const data = await res.json();
 
-      const tripTypeSelector = document.getElementById("trip-type");
+      tripTypeSelector.innerHTML = `<option hidden disabled  selected>Select your trip type</option>`;
       tripTypeSelector.innerHTML = ""; // reset after fetch
 
       data.forEach((triptype) => {
@@ -102,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     } catch (error) {
       console.error("Can't not fetch the triptypes: ", error);
+      tripTypeSelector.innerHTML += `<option>Couldn't load data from server</option>`;
     }
   }
 });
