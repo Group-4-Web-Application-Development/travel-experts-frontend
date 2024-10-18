@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const data = await res.json();
 
       tripTypeSelector.innerHTML = `<option hidden disabled  selected>Select your trip type</option>`;
-      tripTypeSelector.innerHTML = ""; // reset after fetch
 
       data.forEach((triptype) => {
         const optionHTML = `<option value="${triptype.TripTypeId}">${triptype.TTName}</option>`;
