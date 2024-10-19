@@ -40,55 +40,62 @@
     <main>
       <section id="registration-form">
         <h2>Create an Account</h2>
-        <form action="bouncer.php" method="post" id="registration">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+        <form
+          action="http://localhost:3000/packages/order"
+          method="post"
+          id="registration"
+        >
+          <label for="custFirstName">First Name:</label>
+          <input type="text" id="custFirstName" name="custFirstName" required />
 
-          <label for="address">Address:</label>
-          <input type="text" id="address" name="address" required />
+          <label for="custLastName">Last Name:</label>
+          <input type="text" id="custLastName" name="custLastName" required />
 
-          <label for="city">City:</label>
-          <input type="text" id="city" name="city" required />
+          <label for="custAddress">Address:</label>
+          <input type="text" id="custAddress" name="custAddress" required />
 
-          <label for="province">Province:</label>
-          <input type="text" id="province" name="province" required />
+          <label for="custCity">City:</label>
+          <input type="text" id="custCity" name="custCity" required />
 
-          <label for="country">Country:</label>
-          <input type="text" id="country" name="country" required />
+          <label for="custProv">Province:</label>
+          <input type="text" id="custProv" name="custProv" required />
 
-          <label for="postal-code">Postal Code:</label>
-          <input type="text" id="postal-code" name="postal-code" required />
+          <label for="custCountry">Country:</label>
+          <input type="text" id="custCountry" name="custCountry" required />
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <label for="custPostal">Postal Code:</label>
+          <input type="text" id="custPostal" name="custPostal" required />
 
-          <label for="home-phone">Home Phone:</label>
-          <input type="tel" id="home-phone" name="home-phone" />
+          <label for="custEmail">Email:</label>
+          <input type="email" id="custEmail" name="custEmail" required />
 
-          <label for="business-phone">Business Phone:</label>
-          <input type="tel" id="business-phone" name="business-phone" />
+          <label for="custHomePhone">Home Phone:</label>
+          <input type="tel" id="custHomePhone" name="custHomePhone" />
+
+          <label for="custBusPhone">Business Phone:</label>
+          <input type="tel" id="custBusPhone" name="custBusPhone" />
 
           <label for="trip-count">Traveler count:</label>
           <input
             type="number"
-            id="trip-count"
-            name="trip-count"
+            id="travelerCount"
+            name="travelerCount"
             min="1"
             max="20"
           />
 
-          <label for="trip-type">Trip Type:</label>
-          <select name="trip-type" id="trip-type">
+          <label for="tripType">Trip Type:</label>
+          <select name="tripTypeId" id="tripType">
             <!-- get the list of trip type from backend server -->
           </select>
 
           <label for="package">Package:</label>
-          <select name="package" id="package">
+          <select name="packageId" id="package">
             <!-- get the list of packages from backend server -->
           </select>
 
-          <label for="user-id">User ID:</label>
-          <input type="text" id="user-id" name="user-id" required />
+          <label for="userId">User ID:</label>
+          <input type="text" id="userId" name="userId" required />
 
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />

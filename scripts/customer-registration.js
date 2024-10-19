@@ -19,9 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
     errorMessages.forEach((error) => error.remove());
 
     // Validate Name
-    const nameField = document.getElementById("name");
-    if (nameField.value.trim() === "") {
-      showError(nameField, "Name is required.");
+    const fNameField = document.getElementById("custFirstName");
+    if (fNameField.value.trim() === "") {
+      showError(fNameField, "First name is required.");
+      isValid = false;
+    }
+
+    const lNameField = document.getElementById("custLastName");
+    if (lNameField.value.trim() === "") {
+      showError(lNameField, "Last name is required.");
       isValid = false;
     }
 
@@ -54,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Validate User ID
-    const userIdField = document.getElementById("user-id");
+    const userIdField = document.getElementById("userId");
     if (userIdField.value.trim() === "") {
       showError(userIdField, "User ID is required.");
       isValid = false;
@@ -90,13 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(postalCode);
   }
   async function getTripTypes() {
-    const tripTypeSelector = document.getElementById("trip-type");
+    const tripTypeSelector = document.getElementById("tripType");
 
     try {
       const res = await fetch("http://localhost:3000/triptypes");
       const data = await res.json();
 
-      tripTypeSelector.innerHTML = `<option hidden disabled  selected>Select your trip type</option>`;
+      tripTypeSelector.innerHTML = `<option disabled  selected>Select your trip type</option>`;
 
       data.forEach((triptype) => {
         const optionHTML = `<option value="${triptype.TripTypeId}">${triptype.TTName}</option>`;
@@ -115,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const res = await fetch("http://localhost:3000/packages");
       const data = await res.json();
 
-      packageSelector.innerHTML = `<option hidden disabled selected> Choose your vacation package</option>`;
+      packageSelector.innerHTML = `<option disabled selected> Choose your vacation package</option>`;
 
       data.forEach((package) => {
         const optionHTML = `<option value="${package.PackageId}">${package.PkgName}</option>`;
