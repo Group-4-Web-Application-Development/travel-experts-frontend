@@ -1,27 +1,30 @@
-#highlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
 
-.destination {
-  background: #fff;
-  border-radius: 8px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: solid;
-  border-color: #cdcdcd;
-  box-shadow: 0 0 10px rgba(251, 115, 115, 0.1);
-  padding: 15px;
+
+/* -----introduction Styling */
+
+#introduction {
   text-align: center;
+  padding: 20px 20px;
+  background-color: #f8f9fa; 
 }
 
+#introduction h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#introduction p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 /* ---Carousel Styling*/
-/* Adjusting the image height */
+
 .carousel-item img {
-    height: 500px; /* Set the desired height */
+    height: 470px; /* Set the desired height */
     object-fit: cover; 
 }
 
@@ -39,9 +42,4 @@
     line-height: 1.2; 
     max-width: fit-content; /* Caption box width adjusts to fit its content */
     text-align: center; 
-}
-.destination img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
 }

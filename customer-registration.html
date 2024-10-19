@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="global.css" />
     <!-- Individual CSS -->
     <link rel="stylesheet" href="./styles/customer-registration.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
   </head>
 
   <body>
@@ -40,70 +42,107 @@
     <main>
       <section id="registration-form">
         <h2>Create an Account</h2>
-        <form
-          action="http://localhost:3000/packages/order"
-          method="post"
-          id="registration"
-        >
-          <label for="custFirstName">First Name:</label>
-          <input type="text" id="custFirstName" name="custFirstName" required />
-
-          <label for="custLastName">Last Name:</label>
-          <input type="text" id="custLastName" name="custLastName" required />
-
-          <label for="custAddress">Address:</label>
-          <input type="text" id="custAddress" name="custAddress" required />
-
-          <label for="custCity">City:</label>
-          <input type="text" id="custCity" name="custCity" required />
-
-          <label for="custProv">Province:</label>
-          <input type="text" id="custProv" name="custProv" required />
-
-          <label for="custCountry">Country:</label>
-          <input type="text" id="custCountry" name="custCountry" required />
-
-          <label for="custPostal">Postal Code:</label>
-          <input type="text" id="custPostal" name="custPostal" required />
-
-          <label for="custEmail">Email:</label>
-          <input type="email" id="custEmail" name="custEmail" required />
-
-          <label for="custHomePhone">Home Phone:</label>
-          <input type="tel" id="custHomePhone" name="custHomePhone" />
-
-          <label for="custBusPhone">Business Phone:</label>
-          <input type="tel" id="custBusPhone" name="custBusPhone" />
-
-          <label for="trip-count">Traveler count:</label>
-          <input
-            type="number"
-            id="travelerCount"
-            name="travelerCount"
-            min="1"
-            max="20"
-          />
-
-          <label for="tripType">Trip Type:</label>
-          <select name="tripTypeId" id="tripType">
-            <!-- get the list of trip type from backend server -->
-          </select>
-
-          <label for="package">Package:</label>
-          <select name="packageId" id="package">
-            <!-- get the list of packages from backend server -->
-          </select>
-
-          <label for="userId">User ID:</label>
-          <input type="text" id="userId" name="userId" required />
-
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
-
+        <form action="http://localhost:3000/packages/order" method="post" id="registration">
+    
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+            <label for="custFirstName">First Name:</label>
+            <input type="text" id="custFirstName" name="custFirstName" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+            <label for="custLastName">Last Name:</label>
+            <input type="text" id="custLastName" name="custLastName" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-home"></i>
+            <label for="custAddress">Address:</label>
+            <input type="text" id="custAddress" name="custAddress" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-city"></i>
+            <label for="custCity">City:</label>
+            <input type="text" id="custCity" name="custCity" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-map-marker-alt"></i>
+            <label for="custProv">Province:</label>
+            <input type="text" id="custProv" name="custProv" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-globe"></i>
+            <label for="custCountry">Country:</label>
+            <input type="text" id="custCountry" name="custCountry" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <label for="custPostal">Postal Code:</label>
+            <input type="text" id="custPostal" name="custPostal" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <label for="custEmail">Email:</label>
+            <input type="email" id="custEmail" name="custEmail" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-phone"></i>
+            <label for="custHomePhone">Home Phone:</label>
+            <input type="tel" id="custHomePhone" name="custHomePhone" />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-briefcase"></i>
+            <label for="custBusPhone">Business Phone:</label>
+            <input type="tel" id="custBusPhone" name="custBusPhone" />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-users"></i>
+            <label for="trip-count">Traveler count:</label>
+            <input type="number" id="travelerCount" name="travelerCount" min="1" max="20" />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-suitcase"></i>
+            <label for="tripType">Trip Type:</label>
+            <select name="tripTypeId" id="tripType">
+              <!-- get the list of trip type from backend server -->
+            </select>
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-plane"></i>
+            <label for="package">Package:</label>
+            <select name="packageId" id="package">
+              <!-- get the list of packages from backend server -->
+            </select>
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-user-shield"></i>
+            <label for="userId">User ID:</label>
+            <input type="text" id="userId" name="userId" required />
+          </div>
+    
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+    
           <button type="submit">Register</button>
         </form>
       </section>
     </main>
+    
 
     <footer>
       <p>&copy; 2024 Travel Experts. All rights reserved.</p>

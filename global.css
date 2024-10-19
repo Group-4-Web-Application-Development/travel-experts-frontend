@@ -8,35 +8,54 @@ body {
   background-color: #f4f4f4;
   color: #333333;
 }
-
+/*-------Header Styling---------*/
 header {
-  background: #28a745;
-  color: #fff;
-  padding: 10px 0;
+  background-color: #28a745; /* Green background */
+  color: white;
+  padding: 10px 0; /* Reduced padding */
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-  display: inline;
   margin: 0 15px;
 }
 
 nav ul li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
+nav ul li a:hover {
+  text-decoration: underline;
+}
+/* ----------End of Header Styling----------------- */
+/*-------Footer Styling--------*/
+
 footer {
-  background: #333;
-  color: #fff;
+  background-color: #343a40;
+  color: white;
   text-align: center;
   padding: 10px 0;
-  margin-top: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 h1 {
