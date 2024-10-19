@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   getTripTypes();
+  getPackages();
 
   function validateForm() {
     let isValid = true;
@@ -104,6 +105,25 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       console.error("Can't not fetch the triptypes: ", error);
       tripTypeSelector.innerHTML += `<option>Couldn't load data from server</option>`;
+    }
+  }
+
+  async function getPackages() {
+    const packageSelector = document.getElementById("package");
+
+    try {
+      const res = await fetch("http://localhost:3000/packages");
+      const data = await res.json();
+
+      packageSelector.innerHTML = `<option hidden disabled selected> Choose your vacation package</option>`;
+
+      data.forEach((package) => {
+        const optionHTML = `<option value="${package.PackageId}">${package.PkgName}</option>`;
+        packageSelector.innerHTML += optionHTML;
+      });
+    } catch (error) {
+      console.error("Can't not fetch the packages: ", error);
+      packageSelector.innerHTML += `<option>Couldn't load data from server</option>`;
     }
   }
 });
