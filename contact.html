@@ -16,7 +16,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+    <!-- Global CSS -->
     <link rel="stylesheet" href="global.css" />
+    <!-- Individual CSS -->
+    <link rel="stylesheet" href="./styles/contact.css" />
   </head>
 
   <body>
@@ -37,18 +40,18 @@
     <main>
       <section id="contact-info">
         <h2>Contact with our agency</h2>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-lg-7">
-              <img
-                src="images/contact-pic.svg"
-                alt="contact information picture"
-              />
-            </div>
-            <div
-              class="row col-sm-12 col-lg-5 row-cols-1 g-5 mt-0"
-              id="cityCards"
-            ></div>
+        <div class="container mt-5">
+          <div class="row" id="cityCards">
+            <!-- get data from database -->
+          </div>
+          <div
+            id="error-message"
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+            style="display: none"
+          >
+            <strong>Error:</strong> Unable to fetch the contact data. Please try
+            again later.
           </div>
         </div>
       </section>
