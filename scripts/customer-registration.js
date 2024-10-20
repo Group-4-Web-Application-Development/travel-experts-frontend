@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const registrationForm = document.getElementById("registration");
+  // register fetching function
+  getTripTypes();
+  getPackages();
 
+  const registrationForm = document.getElementById("registration");
   registrationForm.addEventListener("submit", async function (event) {
     // Prevent the form from submitting if there are validation errors
     event.preventDefault();
@@ -41,9 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
       handleError("Something went wrong, please try again later.");
     }
   });
-
-  getTripTypes();
-  getPackages();
 
   function validateForm() {
     let isValid = true;
