@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    // Validate Password
+    // Validate package
     const packageField = document.getElementById("package");
     if (packageField.value.trim() === "") {
       showError(packageField, "Package is required. Please try again");
