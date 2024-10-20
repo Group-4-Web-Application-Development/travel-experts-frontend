@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const res = await fetch("http://localhost:3000/triptypes");
       const data = await res.json();
 
-      tripTypeSelector.innerHTML = `<option disabled  selected>Select your trip type</option>`;
+      tripTypeSelector.innerHTML = `<option disabled selected value="">Select your trip type</option>`;
 
       data.forEach((triptype) => {
         const optionHTML = `<option value="${triptype.TripTypeId}">${triptype.TTName}</option>`;
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const res = await fetch("http://localhost:3000/packages");
       const data = await res.json();
 
-      packageSelector.innerHTML = `<option disabled selected> Choose your vacation package</option>`;
+      packageSelector.innerHTML = `<option disabled selected value=""> Choose your vacation package</option>`;
 
       data.forEach((package) => {
         const optionHTML = `<option value="${package.PackageId}">${package.PkgName}</option>`;
