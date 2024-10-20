@@ -107,6 +107,20 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
+    // Validate trip type
+    const tripTypeField = document.getElementById("tripType");
+    if (tripTypeField.value.trim() === "") {
+      showError(tripTypeField, "Trip type is required. Please try again.");
+      isValid = false;
+    }
+
+    // Validate Password
+    const packageField = document.getElementById("package");
+    if (packageField.value.trim() === "") {
+      showError(packageField, "Package is required. Please try again");
+      isValid = false;
+    }
+
     return isValid;
   }
 
