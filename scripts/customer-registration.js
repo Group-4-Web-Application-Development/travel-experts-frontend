@@ -1,15 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const registrationForm = document.getElementById("registration");
-
-  registrationForm.addEventListener("submit", function (event) {
-    // Prevent the form from submitting if there are validation errors
-    if (!validateForm()) {
-      event.preventDefault();
-    }
-  });
-
+  // register fetching function
   getTripTypes();
   getPackages();
+
+  const registrationForm = document.getElementById("registration");
+  registrationForm.addEventListener("submit", async function (event) {
+    // Prevent the form from submitting if there are validation errors
+    event.preventDefault();
+    document.getElementById("submissionError").innerHTML = "";
+    if (!validateForm()) {
+      return;
+    }
+
+    const form = event.target;
+    // James: to manipulate the request and response data, I need to send request manually
+    // and force to use URLSearchparam(). If not, it will use multipart/form-data
+    const formData = new URLSearchParams();
+    for (const element of form.elements) {
+      if (element.name) {
+        formData.append(element.name, element.value);
+      }
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        handleError(errorData.error.message);
+      } else {
+        form.reset();
+        document.getElementById("submissionError").innerHTML = "";
+      }
+    } catch (error) {
+      console.error("Error during form submission:", error);
+      handleError("Something went wrong, please try again later.");
+    }
+  });
 
   function validateForm() {
     let isValid = true;
@@ -32,28 +66,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Validate Email
-    const emailField = document.getElementById("email");
+    const emailField = document.getElementById("custEmail");
     if (!validateEmail(emailField.value)) {
       showError(emailField, "Please enter a valid email address.");
       isValid = false;
     }
 
     // Validate Address
-    const addressField = document.getElementById("address");
+    const addressField = document.getElementById("custAddress");
     if (addressField.value.trim() === "") {
       showError(addressField, "Address is required.");
       isValid = false;
     }
 
     // Validate City
-    const cityField = document.getElementById("city");
+    const cityField = document.getElementById("custCity");
     if (cityField.value.trim() === "") {
       showError(cityField, "City is required.");
       isValid = false;
     }
 
     // Validate Postal Code
-    const postalCodeField = document.getElementById("postal-code");
+    const postalCodeField = document.getElementById("custPostal");
     if (!validatePostalCode(postalCodeField.value)) {
       showError(postalCodeField, "Please enter a valid postal code.");
       isValid = false;
@@ -70,6 +104,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordField = document.getElementById("password");
     if (passwordField.value.length < 6) {
       showError(passwordField, "Password must be at least 6 characters long.");
+      isValid = false;
+    }
+
+    // Validate trip type
+    const tripTypeField = document.getElementById("tripType");
+    if (tripTypeField.value.trim() === "") {
+      showError(tripTypeField, "Trip type is required. Please try again.");
+      isValid = false;
+    }
+
+    // Validate package
+    const packageField = document.getElementById("package");
+    if (packageField.value.trim() === "") {
+      showError(packageField, "Package is required. Please try again");
       isValid = false;
     }
 
@@ -95,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const re = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
     return re.test(postalCode);
   }
+
   async function getTripTypes() {
     const tripTypeSelector = document.getElementById("tripType");
 
@@ -102,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const res = await fetch("http://localhost:3000/triptypes");
       const data = await res.json();
 
-      tripTypeSelector.innerHTML = `<option disabled  selected>Select your trip type</option>`;
+      tripTypeSelector.innerHTML = `<option disabled selected value="">Select your trip type</option>`;
 
       data.forEach((triptype) => {
         const optionHTML = `<option value="${triptype.TripTypeId}">${triptype.TTName}</option>`;
@@ -121,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const res = await fetch("http://localhost:3000/packages");
       const data = await res.json();
 
-      packageSelector.innerHTML = `<option disabled selected> Choose your vacation package</option>`;
+      packageSelector.innerHTML = `<option disabled selected value=""> Choose your vacation package</option>`;
 
       data.forEach((package) => {
         const optionHTML = `<option value="${package.PackageId}">${package.PkgName}</option>`;
@@ -131,5 +180,9 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Can't not fetch the packages: ", error);
       packageSelector.innerHTML += `<option>Couldn't load data from server</option>`;
     }
+  }
+
+  function handleError(message) {
+    document.getElementById("submissionError").innerHTML = message;
   }
 });
