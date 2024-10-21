@@ -33,6 +33,8 @@ app.get("/thank-you", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "thank-you.html"));
 });
 // *******************************************************************************************************
+
+// not found page
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, "views", "notfound.html"));
 });
