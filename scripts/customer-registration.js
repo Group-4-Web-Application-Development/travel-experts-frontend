@@ -36,8 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const errorData = await response.json();
         handleError(errorData.error.message);
       } else {
-        form.reset();
-        document.getElementById("submissionError").innerHTML = "";
+        window.location.href = "/thank-you.html";
       }
     } catch (error) {
       console.error("Error during form submission:", error);
