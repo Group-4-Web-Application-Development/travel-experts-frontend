@@ -13,6 +13,7 @@
 1. [Project Overview](#project-overview)
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
+4. [Usage](#usage)
 
 ## Project Overview
 
@@ -31,3 +32,31 @@ Travel Experts is a comprehensive web platform designed to streamline the travel
 ## Technologies Used
 
 - **Programming Language:** HTML, CSS and JavaScript
+
+## Usage
+
+### Installation
+
+Before running the application, ensure that all dependencies are installed. Run the following command in the project directory:
+
+```sh
+npm install
+```
+
+This will install all necessary packages specified in the `package.json` file.
+
+### Running the Application Locally
+
+To run the application in a local environment, use the following command:
+
+```sh
+npm run dev
+```
+
+### Running the Application in Development Mode
+
+To run the application in development mode, use the following command:
+
+```sh
+npm start
+```
