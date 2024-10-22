@@ -18,14 +18,19 @@
 }
 
 .pkgImg {
-  height: 120px;
   border-radius: 8px;
   border: solid;
   border-color: #cdcdcd;
-  height: 120px;
-  width: 100%;
+  height: 220px;
+  width: 70%;
 }
 
 .vacayText {
   font-size: 12px;
+  
+}
+
+.ordBut{
+  border-radius: 5px;
+  background-color: #f4f4f4;
 }
