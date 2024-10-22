@@ -1,0 +1,28 @@
+{
+  "name": "travel-experts-frontend",
+  "version": "1.0.0",
+  "description": "**Course Name:** Web Application Development  \r **Course Code:** CPRG-210  \r **Instructor:** Samuel Sofela  \r **Project Due Date:** 10-22-2024  \r **Group:** 4",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Group-4-Web-Application-Development/travel-experts-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Group-4-Web-Application-Development/travel-experts-frontend/issues"
+  },
+  "homepage": "https://github.com/Group-4-Web-Application-Development/travel-experts-frontend#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  }
+}
