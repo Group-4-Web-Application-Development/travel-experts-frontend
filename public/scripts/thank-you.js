@@ -3,6 +3,6 @@ var interval = setInterval(() => {
   document.getElementById("countdown").innerHTML = --count;
   if (count <= 0) {
     clearInterval(interval);
-    window.location.replace("/customer-registration.html");
+    window.location.replace("/customer-registration");
   }
 }, 1000);
