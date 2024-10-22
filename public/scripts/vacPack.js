@@ -10,12 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function getVacPackage() {
-  const vacationPackages = document.getElementById("vacation-packages");
+  const vacationPackages = document.getElementById("packages");
   try {
     const res = await fetch("http://localhost:3000/packages");
     const data = await res.json();
-
-    vacationPackages.innerHTML = ""; // reset after fetch
 
     data.forEach((packages, idx) => {
       let startDate = new Date(packages.PkgStartDate);
