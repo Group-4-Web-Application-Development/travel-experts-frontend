@@ -1,3 +1,11 @@
+/**
+ * @file contact.js
+ * @description A contact's JavaScript for fetching the data from backend
+ *
+ * @version 1.0.0
+ * @date 2024-10-25
+ * @author Sorawat Tanthikun
+ */
 document.addEventListener("DOMContentLoaded", function () {
   getAgencyContact();
 });

@@ -1,3 +1,11 @@
+/**
+ * @file customer-registration.js
+ * @description A customer-registration's JavaScript for form validation and fetching data
+ *
+ * @version 1.0.0
+ * @date 2024-10-25
+ * @author Jalil Mohseni, Sorawat Tanthikun
+ */
 document.addEventListener("DOMContentLoaded", function () {
   // register fetching function
   getTripTypes();

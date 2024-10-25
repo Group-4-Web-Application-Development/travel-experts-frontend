@@ -1,3 +1,11 @@
+/**
+ * @file vackPack.js
+ * @description A vacation packages's JavaScript for fetching the data from backend
+ *
+ * @version 1.0.0
+ * @date 2024-10-25
+ * @author Jenson Bender
+ */
 const locPhoto = [
   "https://static.pexels.com/photos/3438/beach-holiday-vacation-caribbean.jpg",
   "https://p0.pikist.com/photos/917/817/bora-bora-island-caribbean-tahiti-polynesia-paradise-travel-sea-nature.jpg",
